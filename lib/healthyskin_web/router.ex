@@ -7,5 +7,7 @@ defmodule HealthyskinWeb.Router do
 
   scope "/api", HealthyskinWeb do
     pipe_through :api
+
+    post "/subscriptions", SubscriptionController, :create
   end
 end
