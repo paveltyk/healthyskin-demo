@@ -11,5 +11,6 @@ ENV MIX_HOME=/root/.mix
 WORKDIR /app
 COPY . /app
 COPY --from=assets /app/assets/build /app/assets/build
+RUN apk --no-cache add curl
 RUN mix local.hex --force && mix local.rebar --force && mix do deps.get, compile
 CMD mix phx.server
