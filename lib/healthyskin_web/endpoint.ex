@@ -11,9 +11,10 @@ defmodule HealthyskinWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :healthyskin,
+    from: "assets/build",
     gzip: false,
-    only: ~w(css fonts images js favicon.ico robots.txt)
+    only:
+      ~w(index.html favicon.ico logo192.png logo512.png static service-worker.js manifest.json)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.

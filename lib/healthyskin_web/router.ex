@@ -10,4 +10,8 @@ defmodule HealthyskinWeb.Router do
 
     post "/subscriptions", SubscriptionController, :create
   end
+
+  scope "/", HealthyskinWeb do
+    get("/*path", PageController, :index)
+  end
 end
